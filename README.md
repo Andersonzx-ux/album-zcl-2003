@@ -1,4 +1,4 @@
-# Álbum Player Interativo - Zezé Di Camargo & Luciano
+# Álbum Player Interativo - Zezé Di Camargo & Luciano 2003
 
 Este projeto é um player/encarte digital premium, desenvolvido com foco na experiência mobile (Safari/iOS) e na reprodução de áudio estática (GitHub Pages).
 
@@ -59,7 +59,7 @@ Para adicionar uma música:
 ```
 
 **ARQUIVOS DE ÁUDIO:** 
-Coloque os arquivos `.mp3` dentro da pasta `audio/` na raiz do projeto e referencie o caminho relativo no campo `audio` de cada faixa (ex: `audio/01-faixa.mp3`). Recomenda-se nomear os arquivos com o número da faixa para manter a organização (01-, 02-, etc). Como o GitHub Pages tem limite de tamanho por repositório (recomendado até ~1GB), fique atento ao tamanho total dos MP3s se o álbum for grande.
+Coloque os arquivos `.flac` dentro da pasta `audio/` na raiz do projeto e referencie o caminho relativo no campo `audio` de cada faixa (ex: `audio/01.flac`). Recomenda-se nomear os arquivos com o número da faixa para manter a organização (01-, 02-, etc). Como o GitHub Pages tem limite de tamanho por repositório (recomendado até ~1GB), fique atento ao tamanho total dos MP3s se o álbum for grande.
 
 ### 5. Letras Sincronizadas (formato LRC)
 O campo `lyrics` aceita dois formatos:
