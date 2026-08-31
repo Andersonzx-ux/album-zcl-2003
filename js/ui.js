@@ -422,8 +422,16 @@ class UI {
         items.forEach((el, i) => el.classList.toggle('active', i === idx));
         
         if (idx >= 0 && items[idx]) {
-            items[idx].scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
+    const container = this.elements.lyricsContent;
+    const el = items[idx];
+    const targetTop =
+        el.offsetTop - (container.clientHeight / 2) + (el.clientHeight / 2);
+
+    container.scrollTo({
+        top: Math.max(0, targetTop),
+        behavior: 'smooth'
+    });
+}
     }
     
     onProgressUpdate(currentTime, duration) {
