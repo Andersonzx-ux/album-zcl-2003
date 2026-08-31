@@ -422,16 +422,30 @@ class UI {
         items.forEach((el, i) => el.classList.toggle('active', i === idx));
         
         if (idx >= 0 && items[idx]) {
-    const container = this.elements.lyricsContent;
-    const el = items[idx];
-    const targetTop =
-        el.offsetTop - (container.clientHeight / 2) + (el.clientHeight / 2);
+            // Rola apenas dentro do container da letra, sem afetar o
+            // scroll da página (scrollIntoView rolaria a página inteira).
+            // Usamos getBoundingClientRect em vez de offsetTop porque
+            // offsetTop é relativo ao offsetParent (que pode não ser o
+            // container), o que gerava valores errados e jogava o
+            // scroll pro final da caixa.
+            const container = this.elements.lyricsContent;
+            const el = items[idx];
 
-    container.scrollTo({
-        top: Math.max(0, targetTop),
-        behavior: 'smooth'
-    });
-}
+            const containerRect = container.getBoundingClientRect();
+            const elRect = el.getBoundingClientRect();
+            const elOffsetWithinContainer =
+                (elRect.top - containerRect.top) + container.scrollTop;
+
+            const targetTop =
+                elOffsetWithinContainer - (container.clientHeight / 2) + (elRect.height / 2);
+
+            const maxScroll = container.scrollHeight - container.clientHeight;
+
+            container.scrollTo({
+                top: Math.min(Math.max(0, targetTop), Math.max(0, maxScroll)),
+                behavior: 'smooth'
+            });
+        }
     }
     
     onProgressUpdate(currentTime, duration) {
