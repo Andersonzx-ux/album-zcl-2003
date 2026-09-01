@@ -75,11 +75,3 @@ lyrics: `[00:12.00]Primeira linha da música
 ```
 
 Você pode conseguir arquivos `.lrc` prontos em sites de letras sincronizadas, ou criar/editar manualmente. Basta colar o conteúdo do `.lrc` (mantendo as tags de tempo) direto no campo `lyrics` como uma string. Não é necessário fazer upload do arquivo `.lrc` em si — o conteúdo dele vira texto dentro do `album.js`.
-
-## Hospedagem (GitHub Pages)
-O projeto é 100% estático. Para publicá-lo:
-1. Faça o commit de todos os arquivos.
-2. Faça push para um repositório no GitHub.
-3. Acesse Settings > Pages.
-4. Escolha a branch `main` e a pasta `/(root)`.
-5. Salve e aguarde a publicação.
