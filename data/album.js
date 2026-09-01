@@ -301,7 +301,38 @@ window.album = {
             duration: "3:44",
             composers: ["Angelino de Oliveira"],
             audio: "audio/09.flac",
-            lyrics: ""
+            lyrics: `[00:23.13] Nestes versos tão singelos
+[00:24.80] Minha bela, meu amor
+[00:34.37] Prá você quero contar
+[00:34.95] O meu sofrer e a minha dor
+[00:40.52] Eu sou como um sabiá
+[00:47.80] Que quando canta é só tristeza
+[00:53.55] Desde o galho onde ele está
+[00:56.60] 
+[00:58.81] Nesta viola canto e gemo de verdade
+[01:08.57] Cada toada representa uma saudade
+[01:15.22] Eu nasci naquela serra
+[01:23.56] Num ranchinho beira-chão
+[01:27.84] 
+[01:30.08] Todo cheio de buracos
+[01:35.29] Onde a lua faz clarão
+[01:37.17] Quando chega a madrugada
+[01:47.40] Lá no mato a passarada
+[01:51.13] Principia um barulhão
+[01:55.23] 
+[01:57.41] Nesta viola, canto e gemo de verdade
+[02:07.21] Cada toada representa uma saudade
+[02:12.08] Lá no mato tudo é triste
+[02:17.14] 
+[02:26.10] Desde o jeito de falar
+[02:45.53] 
+[02:48.35] Pois o Jeca quando canta
+[03:04.35] Dá vontade de chorar
+[03:05.95] Vontade de chorar
+[03:06.75] E o choro que vai caindo
+[03:21.18] Devagar vai-se sumindo
+[03:24.72] Como as águas vão pro mar.
+[03:31.65] `
         },
         {
             number: 10,
