@@ -619,16 +619,67 @@ input[type="range"]::-moz-range-thumb:hover {
     max-height: 500px;
 }
 
+/* Quando colapsado, a seção encolhe e o header fica limpo */
+.lyrics-section.lyrics-collapsed {
+    height: auto;
+    max-height: none;
+    align-self: start;
+}
+
+.lyrics-section.lyrics-collapsed .lyrics-header {
+    margin-bottom: 0;
+    border-bottom-color: transparent;
+    padding-bottom: 0;
+}
+
 .lyrics-header {
     margin-bottom: var(--spacing-md);
     border-bottom: 1px solid var(--c-brown-dark);
     padding-bottom: var(--spacing-sm);
 }
 
+.lyrics-header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+}
+
 #lyrics-title {
     color: var(--c-gold-main);
     font-family: var(--f-serif);
     font-style: italic;
+}
+
+/* Botão de toggle da seção de letras */
+.btn-toggle-lyrics {
+    background: rgba(var(--rgb-black-brown), 0.5);
+    border: 1px solid var(--c-sepia-dark);
+    color: var(--c-gold-main);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.25s var(--ease-smooth), border-color 0.25s var(--ease-smooth), transform 0.3s var(--ease-smooth);
+}
+
+.btn-toggle-lyrics:hover {
+    background: var(--c-black-brown);
+    border-color: var(--c-gold-main);
+}
+
+.btn-toggle-lyrics svg {
+    transition: transform 0.35s var(--ease-smooth);
+    display: block;
+}
+
+/* Quando colapsado, a seta aponta para cima */
+.lyrics-collapsed .btn-toggle-lyrics svg {
+    transform: rotate(-180deg);
 }
 
 .lyrics-content {
@@ -639,6 +690,17 @@ input[type="range"]::-moz-range-thumb:hover {
     line-height: 1.85;
     color: var(--c-cream);
     padding-right: var(--spacing-sm);
+    max-height: 9999px;
+    transition: max-height 0.4s var(--ease-smooth), opacity 0.3s ease;
+    opacity: 1;
+}
+
+/* Apenas o corpo da letra colapsa — o header fica intacto */
+.lyrics-section.lyrics-collapsed .lyrics-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding-right: 0;
 }
 
 .lyrics-content::-webkit-scrollbar {
